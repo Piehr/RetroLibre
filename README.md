@@ -7,7 +7,7 @@ Based on:
 
 Updating from your actual RetroLibre:
 
-For now, the package is only creating dat_files backup in /storage/backup/dat_files. :)
+For now, the package is only proposinf to replace your dat_files par the Master ones, creating dat_files backup in /storage/backup/dat_files. :)
 
 To proceed :
 Get the last package:
