@@ -1,8 +1,10 @@
 #!/bin/bash
-BACKUPDIR="/storage/backup/preinstall/"
+_now=$(date +"%m_%d_%Y_%H_%M_%S")
+BACKUPDIR="/storage/backup/"$_now"/"
 DATFILESBACKUPDIR="dat_files/"
 DATFILESMASTERDIR="dat_files/"
 DATFILESDIR="/storage/.kodi/userdata/addon_data/plugin.program.iarl/dat_files/"
+BIOSDIR="/storage/roms/bios/"
 echo "!!!WARNING!!!
 You're about to install our up-to-date Git Package (https://github.com/Piehr/RetroLibre) on this computer, updating its content on your system."
 while true; do
@@ -17,7 +19,7 @@ while true; do
 
 		fi
 		
-
+		mkdir $BACKUPDIR && wait
 
 
 		while true; do
@@ -30,7 +32,6 @@ while true; do
 						echo "ERROR: $DATFILESDIR NOT FOUND";
 					exit; 
 					fi
-					mkdir $BACKUPDIR && 
 					mkdir $BACKUPDIR$DATFILESBACKUPDIR &&
 					cp -rf $DATFILESDIR* $BACKUPDIR$DATFILESBACKUPDIR &&
 					wait
@@ -48,6 +49,8 @@ while true; do
 				 * ) echo "Please answer yes or no.";;
 			 	esac
 		done
+		
+		
 		echo "Update process complete. Enjoy!"
 		exit
 		break;;
