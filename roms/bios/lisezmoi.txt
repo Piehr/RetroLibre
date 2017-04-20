@@ -1,0 +1,88 @@
+
+*******************************************************************************
+                                 BIOS Recalbox
+*******************************************************************************
+
+-------------------------------------------------------------------------------
+                               Post Information
+-------------------------------------------------------------------------------
+Posted by............: K3nnyfr - @K3nnyfr
+Posted on............: 13/03/2016
+Release version......: 2.0-v4.0.0-beta1
+
+-------------------------------------------------------------------------------
+                             Information Generales 
+-------------------------------------------------------------------------------
+Type.................: Utility
+Platform.............: Raspberry Pi/Pi2/etc
+
+Compilation de tous les BIOS pour Recalbox, parce que c'est quand même bien la 
+merde pour télécharger les bons BIOS.
+
+C'est quand même plus sympa d'avoir une release de tous les BIOS en une seul 
+fois plutot que d'aller fouiner ça sur des sites bieeeeeeen louches..
+
+-------------------------------------------------------------------------------
+                          Instructions d'Installation
+-------------------------------------------------------------------------------
+
+  #	 Si vous lisez cette doc c'est que vous avez extrait l'archive, BIEN JOUEY!
+
+  #  Copiez le contenu du dossier bios dans le partage réseau bios de votre 
+     Recalbox (par défaut \\recalbox\User data\bios). Sinon vous pouvez toujours 
+	 utiliser l'interface web de recalbox http://recalbox/bios/
+  
+  #  Pour faire fonctionner l'émulateur NeoGeo/Arcade je passe par fba_libretro
+     Particularité de cet emulateur il faut que le BIOS soit dans le même
+	 dossier que les ROMs.
+	 Il faut donc copier le contenu du dossier ROMs dans le partage ROMs de
+	 votre Recalbox (par défaut \\recalbox\User data\roms) ou via interface Web 
+	 http://recalbox/systems/roms/fba_libretro/
+  
+  #  Redémarrez votre RPi et profitez bien ! 
+  
+-------------------------------------------------------------------------------
+					Liste des BIOS présent dans cette release
+-------------------------------------------------------------------------------
+		
+####	Description 					- 	Fichier 			- Hash
+
+## Dossier bios/
+		
+Sega 32x								- 	32X_G_BIOS.BIN		- 	6a5433f6a132a2b683635819a6dcf085	
+Sega 32x								- 	32X_M_BIOS.BIN		- 	f88354ec482be09aeccd76a97bb75868	
+Sega 32x								- 	32X_S_BIOS.BIN		-	7f041b6a55cd7423a6c08a219335269e	
+Atari 7800								- 	7800 BIOS (U).rom	-	0763f1ffb006ddbe32e52d497ee848ae	
+MSX										- 	CARTS.SHA			- 	d6dedca1112ddfda94cc9b2e426b818b	
+MSX										- 	CYRILLIC.FNT		- 	85b38e4128bbc300e675f55b278683a8	
+MSX										- 	DISK.ROM			- 	80dcd1ad1a4cf65d64b7ba10504e8190	
+MSX										- 	FMPAC.ROM			- 	6f69cc8b5ed761b03afd78000dfb0e19	
+MSX										- 	FMPAC16.ROM			- 	af8537262df8df267072f359399a7635	
+MSX										- 	ITALIC.FNT			- 	c83e50e9f33b8dd893c414691822740d	
+MSX										- 	KANJI.ROM			- 	febe8782b466d7c3b16de6d104826b34	
+MSX										- 	MSX.ROM				- 	aa95aea2563cd5ec0a0919b44cc17d47	
+MSX										- 	MSX2.ROM			- 	ec3a01c91f24fbddcbcab0ad301bc9ef	
+MSX										- 	MSX2EXT.ROM			- 	2183c2aff17cf4297bdb496de78c2e8a	
+MSX										- 	MSX2P.ROM			- 	6d8c0ca64e726c82a4b726e9b01cdf1e	
+MSX										- 	MSX2PEXT.ROM		- 	7c8243c71d8f143b2531f01afa6a05dc	
+MSX										- 	MSXDOS2.ROM			- 	6418d091cd6907bbcf940324339e43bb	
+MSX										- 	PAINTER.ROM			- 	403cdea1cbd2bb24fae506941f8f655e	
+MSX										- 	RS232.ROM			- 	279efd1eae0d358eecd4edc7d9adedf3	
+PSX										- 	SCPH1001.BIN		- 	924e392ed05558ffdb115408c263dccf	
+Nintendo Family Computer Disk System	-	disksys.rom			- 	ca30b50f880eb660a320674ed365ef7a	
+Sega CD									-	eu_mcd2_9306.bin	-	d8b8b720dea6c6ba25c309ed633930f4	
+Game Boy Advance						-	gba_bios.bin		-	a860e8c0b6d573d191e4ec7db1b1e4f6	
+Sega CD									-	jp_mcd1_9112.bin	-	bdeb4c47da613946d422d97d98b21cda	
+Lynx									-	lynxboot.img		-	fcd403db69f54290b51035d82f835e7b	
+PC Engine								-	syscard3.pce		-	ff1a674273fe3540ccef576376407d1d	
+Sega CD									-	us_scd2_9306.bin	-	854b9150240a198070150e4566ae1290
+Atari ST								-	tos.img				-	b2a8570de2e850c5acf81cb80512d9f6
+Odyssey 2								-	o2rom.bin			-	562d5ebf9e030a40d6fabfc2f33139fd
+
+## Dossier roms/fba_libretro/
+
+FBA_LibRetro							-	neogeo.zip			-	6d3a0303528ad33c9dbbbb836b17d150
+
+-------------------------------------------------------------------------------
+									Hum vas-y kiff
+-------------------------------------------------------------------------------
