@@ -1,0 +1,158 @@
+<?xml version="1.0" ?>
+<!DOCTYPE datafile [
+<!ELEMENT datafile ANY>
+	<!ELEMENT header ANY>
+		<!ELEMENT emu_name (#PCDATA)>
+		<!ELEMENT emu_parser (#PCDATA)>
+		<!ELEMENT emu_description (#PCDATA)>
+		<!ELEMENT emu_category (#PCDATA)>
+		<!ELEMENT emu_version (#PCDATA)>
+		<!ELEMENT emu_date (#PCDATA)>
+		<!ELEMENT emu_author (#PCDATA)>
+		<!ELEMENT emu_homepage (#PCDATA)>
+		<!ELEMENT emu_baseurl (#PCDATA)>
+		<!ELEMENT emu_launcher (#PCDATA)>
+		<!ELEMENT emu_ext_launch_cmd (#PCDATA)>
+		<!ELEMENT emu_downloadpath (#PCDATA)>
+		<!ELEMENT emu_postdlaction (#PCDATA)>
+		<!ELEMENT emu_comment (#PCDATA)>
+		<!ELEMENT emu_thumb (#PCDATA)>
+		<!ELEMENT emu_banner (#PCDATA)>
+		<!ELEMENT emu_fanart (#PCDATA)>
+		<!ELEMENT emu_logo (#PCDATA)>
+		<!ELEMENT emu_trailer (#PCDATA)>
+	<!ELEMENT game ANY>
+		<!ATTLIST game name CDATA #REQUIRED>
+		<!ELEMENT description (#PCDATA)>
+		<!ELEMENT rom EMPTY>
+			<!ATTLIST rom name CDATA #REQUIRED>
+			<!ATTLIST rom size CDATA #REQUIRED>
+			<!ATTLIST rom crc CDATA #IMPLIED>
+			<!ATTLIST rom sha1 CDATA #IMPLIED>
+			<!ATTLIST rom status (baddump|nodump|good|verified) "good">
+		<!ELEMENT emu_command (#PCDATA)>
+		<!ELEMENT title_clean (#PCDATA)>
+		<!ELEMENT plot (#PCDATA)>
+		<!ELEMENT releasedate (#PCDATA)>
+		<!ELEMENT year (#PCDATA)>
+		<!ELEMENT genre (#PCDATA)>
+		<!ELEMENT studio (#PCDATA)>
+		<!ELEMENT nplayers (#PCDATA)>
+		<!ELEMENT perspective (#PCDATA)>
+		<!ELEMENT rating (#PCDATA)>
+		<!ELEMENT ESRB (#PCDATA)>
+		<!ELEMENT videoid (#PCDATA)>
+		<!ELEMENT thegamesdb_id (#PCDATA)>
+		<!ELEMENT gamefaqs_url (#PCDATA)>
+		<!ELEMENT moby_url (#PCDATA)>
+		<!ELEMENT consolegrid_url (#PCDATA)>
+		<!ELEMENT boxart1 (#PCDATA)>
+		<!ELEMENT boxart2 (#PCDATA)>
+		<!ELEMENT boxart3 (#PCDATA)>
+		<!ELEMENT boxart4 (#PCDATA)>
+		<!ELEMENT boxart5 (#PCDATA)>
+		<!ELEMENT boxart6 (#PCDATA)>
+		<!ELEMENT boxart7 (#PCDATA)>
+		<!ELEMENT boxart8 (#PCDATA)>
+		<!ELEMENT boxart9 (#PCDATA)>
+		<!ELEMENT boxart10 (#PCDATA)>
+		<!ELEMENT snapshot1 (#PCDATA)>
+		<!ELEMENT snapshot2 (#PCDATA)>
+		<!ELEMENT snapshot3 (#PCDATA)>
+		<!ELEMENT snapshot4 (#PCDATA)>
+		<!ELEMENT snapshot5 (#PCDATA)>
+		<!ELEMENT snapshot6 (#PCDATA)>
+		<!ELEMENT snapshot7 (#PCDATA)>
+		<!ELEMENT snapshot8 (#PCDATA)>
+		<!ELEMENT snapshot9 (#PCDATA)>
+		<!ELEMENT snapshot10 (#PCDATA)>		
+		<!ELEMENT fanart1 (#PCDATA)>
+		<!ELEMENT fanart2 (#PCDATA)>
+		<!ELEMENT fanart3 (#PCDATA)>
+		<!ELEMENT fanart4 (#PCDATA)>
+		<!ELEMENT fanart5 (#PCDATA)>
+		<!ELEMENT fanart6 (#PCDATA)>
+		<!ELEMENT fanart7 (#PCDATA)>
+		<!ELEMENT fanart8 (#PCDATA)>
+		<!ELEMENT fanart9 (#PCDATA)>
+		<!ELEMENT fanart10 (#PCDATA)>
+		<!ELEMENT fanart11 (#PCDATA)>
+		<!ELEMENT fanart12 (#PCDATA)>
+		<!ELEMENT fanart13 (#PCDATA)>
+		<!ELEMENT fanart14 (#PCDATA)>
+		<!ELEMENT fanart15 (#PCDATA)>
+		<!ELEMENT fanart16 (#PCDATA)>
+		<!ELEMENT fanart17 (#PCDATA)>
+		<!ELEMENT fanart18 (#PCDATA)>
+		<!ELEMENT fanart19 (#PCDATA)>
+		<!ELEMENT fanart20 (#PCDATA)>
+		<!ELEMENT fanart21 (#PCDATA)>
+		<!ELEMENT fanart22 (#PCDATA)>
+		<!ELEMENT fanart23 (#PCDATA)>
+		<!ELEMENT fanart24 (#PCDATA)>
+		<!ELEMENT fanart25 (#PCDATA)>
+		<!ELEMENT fanart26 (#PCDATA)>
+		<!ELEMENT fanart27 (#PCDATA)>
+		<!ELEMENT fanart28 (#PCDATA)>
+		<!ELEMENT fanart29 (#PCDATA)>
+		<!ELEMENT fanart30 (#PCDATA)>
+		<!ELEMENT banner1 (#PCDATA)>
+		<!ELEMENT banner2 (#PCDATA)>
+		<!ELEMENT banner3 (#PCDATA)>
+		<!ELEMENT banner4 (#PCDATA)>
+		<!ELEMENT banner5 (#PCDATA)>
+		<!ELEMENT banner6 (#PCDATA)>
+		<!ELEMENT banner7 (#PCDATA)>
+		<!ELEMENT banner8 (#PCDATA)>
+		<!ELEMENT banner9 (#PCDATA)>
+		<!ELEMENT banner10 (#PCDATA)>
+		<!ELEMENT clearlogo1 (#PCDATA)>
+		<!ELEMENT clearlogo2 (#PCDATA)>
+		<!ELEMENT clearlogo3 (#PCDATA)>
+		<!ELEMENT clearlogo4 (#PCDATA)>
+		<!ELEMENT clearlogo5 (#PCDATA)>
+		<!ELEMENT clearlogo6 (#PCDATA)>
+		<!ELEMENT clearlogo7 (#PCDATA)>
+		<!ELEMENT clearlogo8 (#PCDATA)>
+		<!ELEMENT clearlogo9 (#PCDATA)>
+		<!ELEMENT clearlogo10 (#PCDATA)>
+]>
+<datafile>
+	<header>
+		<emu_name>CaveStory</emu_name>
+		<emu_parser>NoIntro_parser.xml</emu_parser>
+		<emu_description>CaveStory</emu_description>
+		<emu_category>ports</emu_category>
+		<emu_version>20151220</emu_version>
+		<emu_date>14/08/2016</emu_date>
+		<emu_author>Lefty420</emu_author>
+		<emu_homepage>http://www.no-intro.org</emu_homepage>
+		<emu_baseurl>https://archive.org/download/</emu_baseurl>
+		<emu_launcher>external</emu_launcher>
+		<emu_ext_launch_cmd>/usr/bin/retroarch.sh %NETPLAY_COMMAND% -L /tmp/cores/nxengine_libretro.so "%ROM_PATH%"</emu_ext_launch_cmd>
+		<emu_downloadpath>default</emu_downloadpath>
+		<emu_postdlaction>unzip_update_rom_path_dosbox</emu_postdlaction>
+		<emu_comment>CaveStory Retroarch port, provided by Lefty420.</emu_comment>
+			<emu_thumb>http://www.mobygames.com/images/covers/l/97110-cave-story-windows-front-cover.png</emu_thumb>
+			<emu_banner>http://images.jayisgames.com/cavestoryplus-b.jpg</emu_banner>
+			<emu_fanart>http://2.bp.blogspot.com/_pJ1Z3yosmxk/TBZn3ndPPuI/AAAAAAAAACY/qsEkKB2p-DQ/s1600/Cave+Story+00.png</emu_fanart>
+			<emu_logo>http://orig10.deviantart.net/63e2/f/2013/063/a/d/cave_story_logo_by_stelar_eclipse-d5wz1qt.png</emu_logo>
+			<emu_trailer>VQpHejqlzzY</emu_trailer>
+		</header>
+			<game name="CaveStory">
+				<description>CaveStory</description>
+				<rom name="tom_bftp_D/cs.zip" size="1646720" />
+				<title_clean>CaveStory</title_clean>
+				<plot>Cave Story, or Doukutsu Monogatari, is a Japanese freeware PC side-scrolling platformer game developed by Studio Pixel.  It has been translated into English by Aeon Genesis Translations and has an official translation for commercial releases such as Cave Story Plus.[CR]Cave Story is really one of those games that can be considered a masterpiece of game design. There are so many wonderful and classic gaming elements, that I cannot even begin to describe just one quality well enough to say, It is for this one reason alone that Cave Story is a great game.[CR]There is just so much effort, originality and ingenuity behind this game and it really shows more and more as you play through it.</plot>
+				<releasedate>20/12/2004</releasedate>
+				<year>2004</year>
+				<genre>Retro</genre>
+				<nplayers>1</nplayers>
+				<thegamesdb_id>8333</thegamesdb_id>
+				<videoid>VQpHejqlzzY</videoid>
+				<giantbomb_url>http://www.giantbomb.com/cave-story/3030-20124/</giantbomb_url>
+				<boxart1>http://www.mobygames.com/images/covers/l/97110-cave-story-windows-front-cover.png</boxart1>
+				<banner1>http://images.jayisgames.com/cavestoryplus-b.jpg</banner1>
+				<emu_command>Doukutsu.exe</emu_command>
+			</game>
+</datafile>

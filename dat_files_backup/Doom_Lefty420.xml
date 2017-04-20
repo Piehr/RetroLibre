@@ -1,0 +1,173 @@
+<?xml version="1.0" ?>
+<!DOCTYPE datafile [
+<!ELEMENT datafile ANY>
+	<!ELEMENT header ANY>
+		<!ELEMENT emu_name (#PCDATA)>
+		<!ELEMENT emu_parser (#PCDATA)>
+		<!ELEMENT emu_description (#PCDATA)>
+		<!ELEMENT emu_category (#PCDATA)>
+		<!ELEMENT emu_version (#PCDATA)>
+		<!ELEMENT emu_date (#PCDATA)>
+		<!ELEMENT emu_author (#PCDATA)>
+		<!ELEMENT emu_homepage (#PCDATA)>
+		<!ELEMENT emu_baseurl (#PCDATA)>
+		<!ELEMENT emu_launcher (#PCDATA)>
+		<!ELEMENT emu_ext_launch_cmd (#PCDATA)>
+		<!ELEMENT emu_downloadpath (#PCDATA)>
+		<!ELEMENT emu_postdlaction (#PCDATA)>
+		<!ELEMENT emu_comment (#PCDATA)>
+		<!ELEMENT emu_thumb (#PCDATA)>
+		<!ELEMENT emu_banner (#PCDATA)>
+		<!ELEMENT emu_fanart (#PCDATA)>
+		<!ELEMENT emu_logo (#PCDATA)>
+		<!ELEMENT emu_trailer (#PCDATA)>
+	<!ELEMENT game ANY>
+		<!ATTLIST game name CDATA #REQUIRED>
+		<!ELEMENT description (#PCDATA)>
+		<!ELEMENT rom EMPTY>
+			<!ATTLIST rom name CDATA #REQUIRED>
+			<!ATTLIST rom size CDATA #REQUIRED>
+			<!ATTLIST rom crc CDATA #IMPLIED>
+			<!ATTLIST rom sha1 CDATA #IMPLIED>
+			<!ATTLIST rom status (baddump|nodump|good|verified) "good">
+		<!ELEMENT title_clean (#PCDATA)>
+		<!ELEMENT plot (#PCDATA)>
+		<!ELEMENT releasedate (#PCDATA)>
+		<!ELEMENT year (#PCDATA)>
+		<!ELEMENT genre (#PCDATA)>
+		<!ELEMENT studio (#PCDATA)>
+		<!ELEMENT nplayers (#PCDATA)>
+		<!ELEMENT perspective (#PCDATA)>
+		<!ELEMENT rating (#PCDATA)>
+		<!ELEMENT ESRB (#PCDATA)>
+		<!ELEMENT videoid (#PCDATA)>
+		<!ELEMENT thegamesdb_id (#PCDATA)>
+		<!ELEMENT gamefaqs_url (#PCDATA)>
+		<!ELEMENT moby_url (#PCDATA)>
+		<!ELEMENT consolegrid_url (#PCDATA)>
+		<!ELEMENT boxart1 (#PCDATA)>
+		<!ELEMENT boxart2 (#PCDATA)>
+		<!ELEMENT boxart3 (#PCDATA)>
+		<!ELEMENT boxart4 (#PCDATA)>
+		<!ELEMENT boxart5 (#PCDATA)>
+		<!ELEMENT boxart6 (#PCDATA)>
+		<!ELEMENT boxart7 (#PCDATA)>
+		<!ELEMENT boxart8 (#PCDATA)>
+		<!ELEMENT boxart9 (#PCDATA)>
+		<!ELEMENT boxart10 (#PCDATA)>
+		<!ELEMENT snapshot1 (#PCDATA)>
+		<!ELEMENT snapshot2 (#PCDATA)>
+		<!ELEMENT snapshot3 (#PCDATA)>
+		<!ELEMENT snapshot4 (#PCDATA)>
+		<!ELEMENT snapshot5 (#PCDATA)>
+		<!ELEMENT snapshot6 (#PCDATA)>
+		<!ELEMENT snapshot7 (#PCDATA)>
+		<!ELEMENT snapshot8 (#PCDATA)>
+		<!ELEMENT snapshot9 (#PCDATA)>
+		<!ELEMENT snapshot10 (#PCDATA)>		
+		<!ELEMENT fanart1 (#PCDATA)>
+		<!ELEMENT fanart2 (#PCDATA)>
+		<!ELEMENT fanart3 (#PCDATA)>
+		<!ELEMENT fanart4 (#PCDATA)>
+		<!ELEMENT fanart5 (#PCDATA)>
+		<!ELEMENT fanart6 (#PCDATA)>
+		<!ELEMENT fanart7 (#PCDATA)>
+		<!ELEMENT fanart8 (#PCDATA)>
+		<!ELEMENT fanart9 (#PCDATA)>
+		<!ELEMENT fanart10 (#PCDATA)>
+		<!ELEMENT fanart11 (#PCDATA)>
+		<!ELEMENT fanart12 (#PCDATA)>
+		<!ELEMENT fanart13 (#PCDATA)>
+		<!ELEMENT fanart14 (#PCDATA)>
+		<!ELEMENT fanart15 (#PCDATA)>
+		<!ELEMENT fanart16 (#PCDATA)>
+		<!ELEMENT fanart17 (#PCDATA)>
+		<!ELEMENT fanart18 (#PCDATA)>
+		<!ELEMENT fanart19 (#PCDATA)>
+		<!ELEMENT fanart20 (#PCDATA)>
+		<!ELEMENT fanart21 (#PCDATA)>
+		<!ELEMENT fanart22 (#PCDATA)>
+		<!ELEMENT fanart23 (#PCDATA)>
+		<!ELEMENT fanart24 (#PCDATA)>
+		<!ELEMENT fanart25 (#PCDATA)>
+		<!ELEMENT fanart26 (#PCDATA)>
+		<!ELEMENT fanart27 (#PCDATA)>
+		<!ELEMENT fanart28 (#PCDATA)>
+		<!ELEMENT fanart29 (#PCDATA)>
+		<!ELEMENT fanart30 (#PCDATA)>
+		<!ELEMENT banner1 (#PCDATA)>
+		<!ELEMENT banner2 (#PCDATA)>
+		<!ELEMENT banner3 (#PCDATA)>
+		<!ELEMENT banner4 (#PCDATA)>
+		<!ELEMENT banner5 (#PCDATA)>
+		<!ELEMENT banner6 (#PCDATA)>
+		<!ELEMENT banner7 (#PCDATA)>
+		<!ELEMENT banner8 (#PCDATA)>
+		<!ELEMENT banner9 (#PCDATA)>
+		<!ELEMENT banner10 (#PCDATA)>
+		<!ELEMENT clearlogo1 (#PCDATA)>
+		<!ELEMENT clearlogo2 (#PCDATA)>
+		<!ELEMENT clearlogo3 (#PCDATA)>
+		<!ELEMENT clearlogo4 (#PCDATA)>
+		<!ELEMENT clearlogo5 (#PCDATA)>
+		<!ELEMENT clearlogo6 (#PCDATA)>
+		<!ELEMENT clearlogo7 (#PCDATA)>
+		<!ELEMENT clearlogo8 (#PCDATA)>
+		<!ELEMENT clearlogo9 (#PCDATA)>
+		<!ELEMENT clearlogo10 (#PCDATA)>
+]>
+<datafile>
+	<header>
+		<emu_name>Doom</emu_name>
+		<emu_parser>NoIntro_parser.xml</emu_parser>
+		<emu_description>Doom</emu_description>
+		<emu_category>ports</emu_category>
+		<emu_version>20151220</emu_version>
+		<emu_date>14/08/2016</emu_date>
+		<emu_author>Lefty420</emu_author>
+		<emu_homepage>http://www.no-intro.org</emu_homepage>
+		<emu_baseurl>https://archive.org/download/</emu_baseurl>
+		<emu_launcher>external</emu_launcher>
+		<emu_ext_launch_cmd>/usr/bin/retroarch.sh %NETPLAY_COMMAND% -L /tmp/cores/prboom_libretro.so "%ROM_PATH%"</emu_ext_launch_cmd>
+		<emu_downloadpath>default</emu_downloadpath>
+		<emu_postdlaction>unzip_rom</emu_postdlaction>
+		<emu_comment>Doom and Doom II Retroarch port, provided by Lefty420.</emu_comment>
+			<emu_thumb>http://i.imgur.com/Ow2yRG0.jpg</emu_thumb>
+			<emu_banner>http://i.imgur.com/8kceD3y.jpg</emu_banner>
+			<emu_fanart>http://i.imgur.com/22s811K.jpg</emu_fanart>
+			<emu_logo>http://i.imgur.com/qfsEaC0.png</emu_logo>
+			<emu_trailer>BkaC1-QoraY</emu_trailer>
+		</header>
+			<game name="Doom">
+				<description>Doom</description>
+				<rom name="tom_bftp_D/d1.zip" size="1688202" />
+				<title_clean>Doom</title_clean>
+				<plot>Doom (stylized as DOOM) is a series of first-person shooter video games developed by id Software. The series focuses on the exploits of an unnamed space marine operating under the auspices of Union Aerospace Corporation (UAC), who fights hordes of demons and the undead in order to survive.[CR]Doom is considered to be one of the pioneering first-person shooter games, introducing to IBM-compatible computers features such as 3D graphics, third-dimension spatiality, networked multiplayer gameplay, and support for player-created modifications with the Doom WAD format. Since the release of Doom in 1993, the series has spawned numerous sequels, expansion packs, and a film.[CR]Since its debut, over 10 million copies of games in the Doom series have been sold.</plot>
+				<releasedate>10/12/1993</releasedate>
+				<year>1993</year>
+				<genre>FPS</genre>
+				<nplayers>1</nplayers>
+				<thegamesdb_id>745</thegamesdb_id>
+				<videoid>yr-lQZzevwA</videoid>
+				<giantbomb_url>http://www.giantbomb.com/doom/3025-156/</giantbomb_url>
+				<boxart1>http://farm3.static.flickr.com/2646/4137994079_896635b329_o.jpg</boxart1>
+				<banner1>http://cdn.gamecloud.net.au/wp-content/uploads/2014/02/doom-banner-gamecloud.jpg</banner1>
+			</game>
+			<game name="Doom II">
+				<description>Doom II</description>
+				<rom name="tom_bftp_D/d2.zip" size="5996211" />
+				<title_clean>Doom II</title_clean>
+				<plot>Doom II: Hell on Earth is a first-person shooter video game, the second title of id Software's Doom franchise.  It was originally released for MS-DOS computers in 1994 and Macintosh computers in 1995. Unlike Doom, which was initially only available through shareware and mail order, Doom II was a commercial release sold in stores. Master Levels for Doom II, an expansion pack that includes 21 new levels, was released on December 26, 1995 by id Software.[CR]Due to its success and popularity, Doom II was later released for the Game Boy Advance in 2002, the Tapwave Zodiac in 2004, and on Xbox Live Arcade in 2010. The release of the original Doom source code has facilitated ports to many other platforms, including the Apple iPhone and several other types of cellphones. On August 13, during the QuakeCon 2009 media conference, it was announced that Doom II would be ported to Xbox Live Arcade, and was released in May the following year.</plot>
+				<releasedate>10/12/1993</releasedate>
+				<year>1995</year>
+				<genre>FPS</genre>
+				<nplayers>1</nplayers>
+				<thegamesdb_id>745</thegamesdb_id>
+				<videoid>Vh9nzvgJYFo</videoid>
+				<giantbomb_url>http://www.giantbomb.com/doom/3025-156/</giantbomb_url>
+				<boxart1>https://img1.etsystatic.com/036/0/6824854/il_fullxfull.544927303_l6cn.jpg</boxart1>
+				<banner1>http://www.doom2.com/doom2banner.jpg</banner1>
+			</game>
+</datafile>
+			
+			
