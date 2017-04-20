@@ -8,6 +8,6 @@ Based on:
 Updating from your actual RetroLibre:
 
 Get the last package
-wget https://codeload.github.com/Piehr/RetroLibre/zip/master.zip
+wget https://codeload.github.com/Piehr/RetroLibre/zip/master
 
 Launch update.sh
