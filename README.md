@@ -12,6 +12,6 @@ For now, the package is only proposing to replace your BIOS roms and dat_files b
 To proceed :
 Get the last package:
 - wget https://codeload.github.com/Piehr/RetroLibre/zip/master
-- unzip RetroLibre-master.zip
+- unzip master
 - cd RetroLibre-master/
 - ./update.sh
