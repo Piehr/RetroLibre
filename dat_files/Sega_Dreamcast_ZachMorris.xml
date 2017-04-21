@@ -119,7 +119,7 @@
 			<emu_homepage>http://redump.org/</emu_homepage>
 			<emu_baseurl>http://archive.org/download/</emu_baseurl>
 			<emu_launcher>external</emu_launcher>
-			<emu_ext_launch_cmd>none</emu_ext_launch_cmd>
+			<emu_ext_launch_cmd>/usr/bin/retroarch.sh %NETPLAY_COMMAND% -L /tmp/cores/reicast_libretro.so "%ROM_PATH%"</emu_ext_launch_cmd>
 			<emu_downloadpath>default</emu_downloadpath>
 			<emu_postdlaction>convert_zip_gdi</emu_postdlaction>
 			<emu_comment>ReDump Sega Dreamcast List by Zach Morris.  This is filtered to remove duplicates, demos, etc.[CR]The Dreamcast is a 128-bit video game console which was released by Sega in late 1998 in Japan and from September 1999 in other territories. It was the first entry in the sixth generation of video game consoles, preceding Sony's PlayStation 2, Microsoft's Xbox and the Nintendo GameCube. Dreamcast sales were positive during launch, but because of the strong pressure from rival PlayStation 2, Dreamcast sales decreased, and Sega finally discontinued the Dreamcast in March 2001 and withdrew entirely from the console hardware business, making it the company's final console.[CR]Developer:  Sega[CR]Manufacturer:  Sega[CR]CPU:  200 MHz Hitachi SH4 RISC[CR]Memory:  RAM 16 MB, GPU 8 MB[CR]Graphics:  100 MHz PowerVR2 CLX2[CR]Sound:  Yamaha AICA Sound Processor with a 32-Bit ARM7 RISC CPU[CR]Display:  640 × 480[CR]Media:  Disc[CR]Max Controllers:  4</emu_comment>

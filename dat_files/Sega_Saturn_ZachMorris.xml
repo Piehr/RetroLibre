@@ -119,7 +119,7 @@
 			<emu_homepage>http://www.no-intro.org</emu_homepage>
 			<emu_baseurl>http://archive.org/download/</emu_baseurl>
 			<emu_launcher>external</emu_launcher>
-			<emu_ext_launch_cmd>/usr/bin/retroarch.sh %NETPLAY_COMMAND% -L /tmp/cores/yabause_libretro.so "%ROM_PATH%"</emu_ext_launch_cmd>
+			<emu_ext_launch_cmd>/usr/bin/retroarch.sh %NETPLAY_COMMAND% -L /tmp/cores/mednafen_saturn_libretro.so "%ROM_PATH%"</emu_ext_launch_cmd>
 			<emu_downloadpath>default</emu_downloadpath>
 			<emu_postdlaction>convert_zip_m3u</emu_postdlaction>
 			<emu_comment>ReDump Sega Saturn List by Zach Morris.  This is filtered to remove duplicates, demos, etc.[CR]The Sega Saturn is a 32-bit fifth-generation home video game console that was developed by Sega and released in 1994 in Japan as the successor to the successful Sega Genesis. Saturn has a dual-CPU architecture and a total of eight processors. Its games are in CD-ROM format, and its game library contains several arcade ports as well as original titles.[CR]Developer:  Sega[CR]Manufacturer:  Sega[CR]CPU:  2 × Hitachi SH-2 32-bit RISC[CR]Memory:  1 MB SDRAM as work RAM for both SH-2 CPUs[CR]Graphics:  Custom VDP 1 32-bit video display processor[CR]Sound:  Yamaha FH1 DSP[CR]Display:  320x240[CR]Media:  CD[CR]Max. Controllers:  2</emu_comment>

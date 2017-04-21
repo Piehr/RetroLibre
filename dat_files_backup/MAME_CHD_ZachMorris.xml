@@ -112,7 +112,7 @@
 				<emu_name>MAME - CHD Games</emu_name>
 				<emu_parser>NoIntro_parser.xml</emu_parser>
 				<emu_description>MAME 0.172</emu_description>
-				<emu_category>Arcade, hidden</emu_category>
+				<emu_category>Arcade</emu_category>
 				<emu_version>0.172</emu_version>
 				<emu_date>07/20/2016</emu_date>
 				<emu_author>Zach Morris</emu_author>
