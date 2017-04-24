@@ -85,7 +85,28 @@ while true; do
 		
 		#Check if Transmission is running
 		ps -ef | grep transmission | grep -v grep
-		[ $?  -eq "0" ] && echo "Transmission process is running" || echo "Transmission process is not running"
+		[ $?  -eq "0" ] && transmission_check=true || transmission_check=false
+		
+		if [transmission_check]; then
+			echo "Transmission Daemon is running - nothing to do";
+		else
+			while true; do
+			        read -p "Transmission Daemon not running. Do you want to install it? [y/n]" yn
+				case $yn in
+				[Yy]* )
+					systemctl enable transmission.service && systemctl start transmission && wait
+					echo "Transmission Daemon installed and running."
+					echo "Download directory: /storage/downloads/";
+					echo "For more settings, please check /storage/.config/transmission-daemon/settings.json";
+				break;;
+				[Nn]* )
+					echo "Transmission Daemon configuration skipped."
+					
+				break;;
+				 * ) echo "Please answer yes or no.";;
+			 	esac
+		done
+		fi
 		
 		echo "Update process complete. Enjoy!"
 		exit
