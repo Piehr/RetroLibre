@@ -7,7 +7,7 @@ Based on:
 
 Updating from your actual RetroLibre:
 
-For now, the package is only proposing to replace your BIOS roms and dat_files by the Master ones, creating backup in /storage/backup/. :)
+For now, the package is only proposing to replace your BIOS roms and dat_files by the Master ones, creating backup in /storage/backup/.
 
 To proceed :
 Get the last package:
