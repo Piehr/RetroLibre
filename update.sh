@@ -83,6 +83,9 @@ while true; do
 			 	esac
 		done
 		
+		#Check if Transmission is running
+		ps -ef | grep transmission | grep -v grep
+		[ $?  -eq "0" ] && echo "Transmission process is running" || echo "Transmission process is not running"
 		
 		echo "Update process complete. Enjoy!"
 		exit
