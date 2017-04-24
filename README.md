@@ -1,5 +1,6 @@
 # RetroLibre
 Needed configuration files to deploy a full video/gaming streaming machine on LibreElec 8 Community Build.
+!!New!! Transmission daemon now configurable with standard configuration.
 
 Based on:
 - LibreElec 8 Community Build: https://github.com/escalade/LibreELEC.tv
