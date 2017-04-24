@@ -1,7 +1,8 @@
 # RetroLibre
 Needed configuration files to deploy a full video/gaming streaming machine on LibreElec 8 Community Build.
 
-Working on Emulationstation
+Working on Emulationstation and on Direct TV support.
+
 
 Based on:
 - LibreElec 8 Community Build: https://github.com/escalade/LibreELEC.tv
