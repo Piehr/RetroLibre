@@ -10,6 +10,8 @@ BIOSMASTERDIR="roms/bios/"
 
 BIOSDIR="/storage/roms/bios/"
 
+CONFMASTERDIR = "conf/"
+
 echo "!!!WARNING!!!
 You're about to install our up-to-date Git Package (https://github.com/Piehr/RetroLibre) on this computer, updating its content on your system."
 while true; do
@@ -27,8 +29,18 @@ while true; do
 		mkdir $BACKUPDIR && wait
 
 		check_arch=$(uname -m);
-		echo "Architecture: $check_arch";
 		
+		
+		case $check_arch in
+			"x86_64" )
+			dat_files_conf=${PWD}/$CONFMASTERDIR/"x86_update_config.xml";
+			break;;
+			* )
+			dat_files_conf=${PWD}/$CONFMASTERDIR/"pi_update_config.xml";
+			break;;
+		esac
+		
+		echo "Architecture: $check_arch - $dat_files_conf will be used.";
 
 		while true; do
 			        read -p "Do you want to replace your dat_files by the Master ones?[y/n]" yn
