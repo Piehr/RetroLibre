@@ -26,6 +26,9 @@ while true; do
 		
 		mkdir $BACKUPDIR && wait
 
+		check_arch=$(uname -m);
+		echo "Architecture: $check_arch";
+		
 
 		while true; do
 			        read -p "Do you want to replace your dat_files by the Master ones?[y/n]" yn
