@@ -84,10 +84,14 @@ while true; do
 		done
 		
 		#Check if Transmission is running
-		ps -ef | grep transmission | grep -v grep
-		[ $?  -eq "0" ] && transmission_check=true || transmission_check=false
-		
-		if [transmission_check]; then
+		ps -ef | grep transmission | grep -v grep > /dev/null
+		if [ $?  -eq "0" ] then
+			transmission_check=0;
+		else
+			transmission_check=1;
+		fi
+				
+		if [ $transmission_check -eq 0 ]; then
 			echo "Transmission Daemon is running - nothing to do";
 		else
 			while true; do
