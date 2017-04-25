@@ -10,7 +10,7 @@ BIOSMASTERDIR="roms/bios/"
 
 BIOSDIR="/storage/roms/bios/"
 
-CONFMASTERDIR = "conf/"
+CONFMASTERDIR="conf/"
 
 echo "!!!WARNING!!!
 You're about to install our up-to-date Git Package (https://github.com/Piehr/RetroLibre) on this computer, updating its content on your system."
@@ -33,14 +33,14 @@ while true; do
 		
 		case $check_arch in
 			"x86_64" )
-			dat_files_conf=${PWD}/$CONFMASTERDIR/"x86_update_config.xml";
-			break;;
+			dat_files_conf=${PWD}/$CONFMASTERDIR"x86_update_config.xml";;
 			* )
-			dat_files_conf=${PWD}/$CONFMASTERDIR/"pi_update_config.xml";
-			break;;
+			dat_files_conf=${PWD}/$CONFMASTERDIR"pi_update_config.xml";;
 		esac
 		
 		echo "Architecture: $check_arch - $dat_files_conf will be used.";
+		
+		
 
 		while true; do
 			        read -p "Do you want to replace your dat_files by the Master ones?[y/n]" yn
@@ -52,12 +52,42 @@ while true; do
 						echo "ERROR: $DATFILESDIR NOT FOUND";
 					exit; 
 					fi
-					mkdir $BACKUPDIR$DATFILESBACKUPDIR &&
+					mkdir $BACKUPDIR$DATFILESBACKUPDIR && cp -rf $DATFILESDIR* $BACKUPDIR$DATFILESBACKUPDIR &&
+					wait
+					
+					
+					
 					cp -rf $DATFILESDIR* $BACKUPDIR$DATFILESBACKUPDIR &&
 					wait
 					echo "done. Your old dat_files are located in $BACKUPDIR$DATFILESBACKUPDIR";
 					echo -n "Copying Master dat_files... "
-					rm -rf $DATFILESDIR* &&
+					
+					
+					rm -rf $DATFILESDIR* && wait
+					
+					
+					#Read Master dat_files and check the config file for inclusion
+					for f in ${PWD}/$DATFILESMASTERDIR* do
+						#search in the config file
+						$current_dat_file="";
+						while IFS='' read -r line || [[-n "$line" ]]; do
+							$current_dat_file="$line";
+							if [[ "$current_dat_file" =~ "$f" ]]; then
+								break;
+							fi				
+						done
+						
+						  	
+							if [! -z "$current_dat_file"]; then
+								while IFS=";" read -ra $current_dat_file; do
+									for i in "${$current_dat_file}"; do
+										echo "$i";
+									done
+								done 
+							fi
+							exit;
+					done 
+					
 					cp -rf ${PWD}/$DATFILESMASTERDIR* $DATFILESDIR &&
 				       	wait
 					echo "done"; 	
