@@ -85,7 +85,7 @@ while true; do
 		
 		#Check if Transmission is running
 		ps -ef | grep transmission | grep -v grep > /dev/null
-		if [ $?  -eq "0" ] then
+		if [ $?  -eq "0" ]; then
 			transmission_check=0;
 		else
 			transmission_check=1;
@@ -104,10 +104,11 @@ while true; do
 				break;;
 				 * ) echo "Please answer yes or no.";;
 			 	esac
+			 done
 				
 		else
 			while true; do
-			        read -p "Transmission Daemon not running. Do you want to install it? [y/n]" yn
+			        read -p "Transmission Daemon is not running. Do you want to install it? [y/n]" yn
 				case $yn in
 				[Yy]* )
 					systemctl enable transmission.service && systemctl start transmission && wait
