@@ -92,7 +92,19 @@ while true; do
 		fi
 				
 		if [ $transmission_check -eq 0 ]; then
-			echo "Transmission Daemon is running - nothing to do";
+			while true; do
+			        read -p "Transmission Daemon is running - Do you want to disable it ? [y/n]" yn
+				case $yn in
+				[Yy]* )
+					systemctl disable transmission.service && systemctl stop transmission && wait
+					echo "Transmission Daemon disabled."
+				break;;
+				[Nn]* )
+					echo "Transmission Daemon configuration skipped."
+				break;;
+				 * ) echo "Please answer yes or no.";;
+			 	esac
+				
 		else
 			while true; do
 			        read -p "Transmission Daemon not running. Do you want to install it? [y/n]" yn
