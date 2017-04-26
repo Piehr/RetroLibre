@@ -1,9 +1,4 @@
 # RetroLibre
-  ___     _           _    _ _            
- | _ \___| |_ _ _ ___| |  (_) |__ _ _ ___ 
- |   / -_)  _| '_/ _ \ |__| | '_ \ '_/ -_)
- |_|_\___|\__|_| \___/____|_|_.__/_| \___|
-                                          
 Needed configuration files to deploy a full video/gaming streaming machine on LibreElec 8 Community Build.
 
 ### Based on:
