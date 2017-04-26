@@ -60,6 +60,21 @@ while true; do
 					cp -rf $DATFILESDIR* $BACKUPDIR$DATFILESBACKUPDIR &&
 					wait 
 					echo "Done. Your old dat_files are located in $BACKUPDIR$DATFILESBACKUPDIR";
+					
+					
+					while true; do
+						read -p "Do you want to enable Full Streaming Mode (F) or Local Storage Mode (L)?[F/L]" fl
+						case $fl in
+						[Ff]* )
+							storage_mode="F";
+						break;;
+						[Ll]* )
+							storage_mode="L";
+						break;;
+						 * ) echo "Please answer F (Full Streaming Mode) or L (Local Storage Mode).";;
+			 			esac
+			 		done
+						
 					echo "Copying Master dat_files... "
 					
 					
@@ -73,7 +88,8 @@ while true; do
 						current_dat_file="";
 						while read line; do
 							current_dat_file=$line;
-							test_file=${current_dat_file%	*}
+						
+							test_file=$(echo $current_dat_file |cut -f1 -d' ');
 							
 							if [[ "$wfile" == "$test_file" ]]; then
 								break;
@@ -81,11 +97,20 @@ while true; do
 						done < $dat_files_conf;
 						
 							if [ ! -z "$current_dat_file" ]; then
-								dat_check=${current_dat_file#*	}
+								
+								dat_check=$(echo $current_dat_file |cut -f2 -d' ');
+								dat_path=$(echo $current_dat_file |cut -f3 -d' ');
 								
 								if [ $dat_check -eq 1 ]; then
 									echo -n "Copy of $wfile... ";
 									cp -rf ${PWD}/$DATFILESMASTERDIR"$wfile" $DATFILESDIR && wait
+									
+										if [[ "$storage_mode" == "F" ]]; then
+											sed -i -e "s|<emu_downloadpath>.*</emu_downloadpath>|<emu_downloadpath>default</emu_downloadpath>|g" $DATFILESDIR"$wfile" && wait;
+										else
+											sed -i -e "s|<emu_downloadpath>.*</emu_downloadpath>|<emu_downloadpath>$dat_path</emu_downloadpath>|g" $DATFILESDIR"$wfile" && wait && echo -n "Path changed to $dat_path... ";
+										fi				
+									
 									echo "done.";
 								else
 									echo "Copy of $wfile skipped (Disabled in conf file)";
