@@ -12,6 +12,13 @@ BIOSDIR="/storage/roms/bios/"
 
 CONFMASTERDIR="conf/"
 
+echo "
+  ___     _           _    _ _            
+ | _ \___| |_ _ _ ___| |  (_) |__ _ _ ___ 
+ |   / -_)  _| '_/ _ \ |__| | '_ \ '_/ -_)
+ |_|_\___|\__|_| \___/____|_|_.__/_| \___|
+ 
+";
 echo "!!!WARNING!!!
 You're about to install our up-to-date Git Package (https://github.com/Piehr/RetroLibre) on this computer, updating its content on your system."
 while true; do
