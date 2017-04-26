@@ -1,4 +1,9 @@
 # RetroLibre
+  ___     _           _    _ _            
+ | _ \___| |_ _ _ ___| |  (_) |__ _ _ ___ 
+ |   / -_)  _| '_/ _ \ |__| | '_ \ '_/ -_)
+ |_|_\___|\__|_| \___/____|_|_.__/_| \___|
+                                          
 Needed configuration files to deploy a full video/gaming streaming machine on LibreElec 8 Community Build.
 
 ### Based on:
@@ -11,7 +16,7 @@ Needed configuration files to deploy a full video/gaming streaming machine on Li
 - Update Bios Roms to maximize compatibility with your game roms
 - Enable or Disable Transmission Daemon
 
-### Updating from your actual RetroLibre - How to proceed
+### Updating from your actual RetroLibre - How to proceed:
 Get the last package:
 - wget https://codeload.github.com/Piehr/RetroLibre/zip/master
 - unzip master
