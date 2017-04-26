@@ -81,7 +81,8 @@ while true; do
 						done < $dat_files_conf;
 						
 							if [ ! -z "$current_dat_file" ]; then
-								dat_check=${current_dat_file#*	}
+								dat_file=$(echo $current_dat_file | cut -f1 -d	);
+								dat_check=$(echo $current_dat_file | cut -f2 -d	);
 								
 								if [ $dat_check -eq 1 ]; then
 									echo -n "Copy of $wfile... ";
