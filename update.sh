@@ -33,9 +33,9 @@ while true; do
 		
 		case $check_arch in
 			"x86_64" )
-			dat_files_conf=${PWD}/$CONFMASTERDIR"x86_update_config.xml";;
+			dat_files_conf=${PWD}/$CONFMASTERDIR"x86_update_config.conf";;
 			* )
-			dat_files_conf=${PWD}/$CONFMASTERDIR"pi_update_config.xml";;
+			dat_files_conf=${PWD}/$CONFMASTERDIR"pi_update_config.conf";;
 		esac
 		
 		echo "Architecture: $check_arch - $dat_files_conf will be used.";
@@ -58,39 +58,43 @@ while true; do
 					
 					
 					cp -rf $DATFILESDIR* $BACKUPDIR$DATFILESBACKUPDIR &&
-					wait
-					echo "done. Your old dat_files are located in $BACKUPDIR$DATFILESBACKUPDIR";
-					echo -n "Copying Master dat_files... "
+					wait 
+					echo "Done. Your old dat_files are located in $BACKUPDIR$DATFILESBACKUPDIR";
+					echo "Copying Master dat_files... "
 					
 					
 					rm -rf $DATFILESDIR* && wait
 					
 					
 					#Read Master dat_files and check the config file for inclusion
-					for f in ${PWD}/$DATFILESMASTERDIR* do
+					for f in ${PWD}/$DATFILESMASTERDIR*; do
+						wfile=`basename "$f"`;
 						#search in the config file
-						$current_dat_file="";
-						while IFS='' read -r line || [[-n "$line" ]]; do
-							$current_dat_file="$line";
-							if [[ "$current_dat_file" =~ "$f" ]]; then
+						current_dat_file="";
+						while read line; do
+							current_dat_file=$line;
+							test_file=${current_dat_file%	*}
+							
+							if [[ "$wfile" == "$test_file" ]]; then
 								break;
 							fi				
-						done
+						done < $dat_files_conf;
 						
-						  	
-							if [! -z "$current_dat_file"]; then
-								while IFS=";" read -ra $current_dat_file; do
-									for i in "${$current_dat_file}"; do
-										echo "$i";
-									done
-								done 
+							if [ ! -z "$current_dat_file" ]; then
+								dat_check=${current_dat_file#*	}
+								
+								if [ $dat_check -eq 1 ]; then
+									echo -n "Copy of $wfile... ";
+									cp -rf ${PWD}/$DATFILESMASTERDIR"$wfile" $DATFILESDIR && wait
+									echo "done.";
+								else
+									echo "Copy of $wfile skipped (Disabled in conf file)";
+									
+								fi
 							fi
-							exit;
 					done 
 					
-					cp -rf ${PWD}/$DATFILESMASTERDIR* $DATFILESDIR &&
-				       	wait
-					echo "done"; 	
+					echo "dat_files successfully updated"; 	
 				break;;
 				[Nn]* )
 					echo "Your dat_files have not been updated."
