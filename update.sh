@@ -10,6 +10,15 @@ BIOSMASTERDIR="roms/bios/"
 
 BIOSDIR="/storage/roms/bios/"
 
+CONFMASTERDIR="conf/"
+
+echo "
+  ___     _           _    _ _            
+ | _ \___| |_ _ _ ___| |  (_) |__ _ _ ___ 
+ |   / -_)  _| '_/ _ \ |__| | '_ \ '_/ -_)
+ |_|_\___|\__|_| \___/____|_|_.__/_| \___|
+ 
+";
 echo "!!!WARNING!!!
 You're about to install our up-to-date Git Package (https://github.com/Piehr/RetroLibre) on this computer, updating its content on your system."
 while true; do
@@ -26,6 +35,19 @@ while true; do
 		
 		mkdir $BACKUPDIR && wait
 
+		check_arch=$(uname -m);
+		
+		
+		case $check_arch in
+			"x86_64" )
+			dat_files_conf=${PWD}/$CONFMASTERDIR"x86_update_config.conf";;
+			* )
+			dat_files_conf=${PWD}/$CONFMASTERDIR"pi_update_config.conf";;
+		esac
+		
+		echo "Architecture: $check_arch - $dat_files_conf will be used.";
+		
+		
 
 		while true; do
 			        read -p "Do you want to replace your dat_files by the Master ones?[y/n]" yn
@@ -37,15 +59,74 @@ while true; do
 						echo "ERROR: $DATFILESDIR NOT FOUND";
 					exit; 
 					fi
-					mkdir $BACKUPDIR$DATFILESBACKUPDIR &&
-					cp -rf $DATFILESDIR* $BACKUPDIR$DATFILESBACKUPDIR &&
+					mkdir $BACKUPDIR$DATFILESBACKUPDIR && cp -rf $DATFILESDIR* $BACKUPDIR$DATFILESBACKUPDIR &&
 					wait
-					echo "done. Your old dat_files are located in $BACKUPDIR$DATFILESBACKUPDIR";
-					echo -n "Copying Master dat_files... "
-					rm -rf $DATFILESDIR* &&
-					cp -rf ${PWD}/$DATFILESMASTERDIR* $DATFILESDIR &&
-				       	wait
-					echo "done"; 	
+					
+					
+					
+					cp -rf $DATFILESDIR* $BACKUPDIR$DATFILESBACKUPDIR &&
+					wait 
+					echo "Done. Your old dat_files are located in $BACKUPDIR$DATFILESBACKUPDIR";
+					
+					
+					while true; do
+						read -p "Do you want to enable Full Streaming Mode (F) or Local Storage Mode (L)?[F/L]" fl
+						case $fl in
+						[Ff]* )
+							storage_mode="F";
+						break;;
+						[Ll]* )
+							storage_mode="L";
+						break;;
+						 * ) echo "Please answer F (Full Streaming Mode) or L (Local Storage Mode).";;
+			 			esac
+			 		done
+						
+					echo "Copying Master dat_files... "
+					
+					
+					rm -rf $DATFILESDIR* && wait
+					
+					
+					#Read Master dat_files and check the config file for inclusion
+					for f in ${PWD}/$DATFILESMASTERDIR*; do
+						wfile=`basename "$f"`;
+						#search in the config file
+						current_dat_file="";
+						while read line; do
+							current_dat_file=$line;
+						
+							test_file=$(echo $current_dat_file |cut -f1 -d' ');
+							
+							if [[ "$wfile" == "$test_file" ]]; then
+								break;
+							fi				
+						done < $dat_files_conf;
+						
+							if [ ! -z "$current_dat_file" ]; then
+								
+								dat_check=$(echo $current_dat_file |cut -f2 -d' ');
+								dat_path=$(echo $current_dat_file |cut -f3 -d' ');
+								
+								if [ $dat_check -eq 1 ]; then
+									echo -n "Copy of $wfile... ";
+									cp -rf ${PWD}/$DATFILESMASTERDIR"$wfile" $DATFILESDIR && wait
+									
+										if [[ "$storage_mode" == "F" ]]; then
+											sed -i -e "s|<emu_downloadpath>.*</emu_downloadpath>|<emu_downloadpath>default</emu_downloadpath>|g" $DATFILESDIR"$wfile" && wait;
+										else
+											sed -i -e "s|<emu_downloadpath>.*</emu_downloadpath>|<emu_downloadpath>$dat_path</emu_downloadpath>|g" $DATFILESDIR"$wfile" && wait && echo -n "Path changed to $dat_path... ";
+										fi				
+									
+									echo "done.";
+								else
+									echo "Copy of $wfile skipped (Disabled in conf file)";
+									
+								fi
+							fi
+					done 
+					
+					echo "dat_files successfully updated"; 	
 				break;;
 				[Nn]* )
 					echo "Your dat_files have not been updated."
